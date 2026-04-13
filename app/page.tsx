@@ -3,6 +3,7 @@ import FlashSale from "@/components/home/FlashSale";
 import Category from "@/components/home/Category";
 import PromoBanner from "@/components/home/PromoBanner";
 import BestSelling from "@/components/home/BestSelling";
+import ExplorerProduct from "@/components/home/ExplorerProduct";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <Category />
       <BestSelling />
       <PromoBanner />
+      <ExplorerProduct />
     </main>
   );
 }

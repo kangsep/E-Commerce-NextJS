@@ -1,4 +1,4 @@
-export const products = [
+export const flashSaleProducts = [
   {
     id: 1,
     name: "Gaming Keyboard",
@@ -84,9 +84,9 @@ export const bestSellingProducts = [
   },
 ];
 
-export const ExplorerProducts = [
+export const allProducts = [
   {
-    id: 105,
+    id: 150,
     name: "Case Handphone",
     price: 1,
     oldPrice: 3,
@@ -94,7 +94,7 @@ export const ExplorerProducts = [
     rating: 4,
   },
   {
-    id: 106,
+    id: 151,
     name: "Power Bank",
     price: 25,
     oldPrice: 40,
@@ -102,7 +102,7 @@ export const ExplorerProducts = [
     rating: 4,
   },
   {
-    id: 107,
+    id: 152,
     name: "Tas Ransel",
     price: 15,
     oldPrice: 35,
@@ -110,12 +110,43 @@ export const ExplorerProducts = [
     rating: 4,
   },
   {
-    id: 108,
+    id: 154,
     name: "Monitor 24 Inch",
     price: 110,
     oldPrice: 180,
     image: "/placeholder/product.png",
     rating: 5,
   },
-
+  {
+    id: 155,
+    name: "AMD Ryzen 5 5600X",
+    price: 110,
+    oldPrice: 180,
+    image: "/placeholder/product.png",
+    rating: 5,
+  },
+  {
+    id: 156,
+    name: "Intel Core i5-12600K",
+    price: 240,
+    oldPrice: 250,
+    image: "/placeholder/product.png",
+    rating: 5,
+  },
+  {
+    id: 157,
+    name: "DDR5 16GB RAM (2x8GB)",
+    price: 210,
+    oldPrice: 220,
+    image: "/placeholder/product.png",
+    rating: 5,
+  },
+  {
+    id: 158,
+    name: "NVIDIA GeForce RTX 3060",
+    price: 390,
+    oldPrice: 400,
+    image: "/placeholder/product.png",
+    rating: 5,
+  },
 ];

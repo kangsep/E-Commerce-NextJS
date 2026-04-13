@@ -8,7 +8,7 @@ type Props = {
     price: number;
     oldPrice?: number;
     image: string;
-    rating?: number; // ⭐ tambahkan ini
+    rating?: number;
   };
 };
 
@@ -23,7 +23,7 @@ export default function ProductCard({ product }: Props) {
   return (
     <div className="bg-white rounded-lg p-4 hover:shadow-md transition group">
       
-      {/* IMAGE */}
+      {/* Image */}
       <div className="relative w-full h-48 bg-gray-100 rounded flex items-center justify-center overflow-hidden">
         
         {discount && (
@@ -44,13 +44,13 @@ export default function ProductCard({ product }: Props) {
         />
       </div>
 
-      {/* INFO */}
+      {/* Info */}
       <div className="mt-3">
         <h3 className="font-semibold text-sm line-clamp-2">
           {product.name}
         </h3>
 
-        {/* RATING */}
+        {/* Rating */}
         <div className="flex items-center gap-1 mt-1">
           {[...Array(5)].map((_, i) => (
             <FaStar
@@ -65,7 +65,7 @@ export default function ProductCard({ product }: Props) {
           ))}
         </div>
 
-        {/* PRICE */}
+        {/* Price */}
         <div className="flex gap-2 mt-1 items-center">
           <span className="text-red-500 font-semibold">
             ${product.price}
@@ -79,7 +79,7 @@ export default function ProductCard({ product }: Props) {
         </div>
       </div>
 
-      {/* ADD TO CART */}
+      {/* Add to Cart */}
       <button className="mt-3 w-full bg-black text-white py-2 text-sm rounded opacity-0 group-hover:opacity-100 transition">
         Add To Cart
       </button>
