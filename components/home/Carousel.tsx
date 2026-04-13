@@ -14,7 +14,7 @@ type Slide = {
 const slides: Slide[] = [
   {
     id: 1,
-    title: "iPhone 14 Series",
+    title: "iPhone 16 Series",
     subtitle: "Up to 10% off Voucher",
     image: "/placeholder/hero.png",
   },

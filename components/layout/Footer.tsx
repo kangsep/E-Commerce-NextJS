@@ -28,7 +28,7 @@ export default function Footer() {
         <div>
           <h2 className="font-semibold mb-4">Support</h2>
           <p className="text-sm mb-2">
-            111 Bijoy sarani, Dhaka, <br /> DH 1515, Bangladesh.
+            103 Batununggal, Kota Bandung<br /> Jawa Barat, Indonesia.
           </p>
           <p className="text-sm mb-2">exclusive@gmail.com</p>
           <p className="text-sm">+88015-88888-9999</p>
@@ -85,7 +85,7 @@ export default function Footer() {
             <FaTwitter />
             <FaInstagram />
             <FaLinkedinIn />
-        </div>``
+        </div>
         </div>
 
       </div>
