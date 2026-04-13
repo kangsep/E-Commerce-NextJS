@@ -38,15 +38,15 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col font-sans">
         
-        {/* HEADER */}
+        {/* Header */}
         <Header />
 
-        {/* CONTENT */}
+        {/* Content */}
         <main className="flex-1">
           {children}
         </main>
 
-        {/* FOOTER */}
+        {/* Footer */}
         <Footer />
 
       </body>

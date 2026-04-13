@@ -4,6 +4,7 @@ import Category from "@/components/home/Category";
 import PromoBanner from "@/components/home/PromoBanner";
 import BestSelling from "@/components/home/BestSelling";
 import ExplorerProduct from "@/components/home/ExplorerProduct";
+import NewArrival from "@/components/home/NewArrival";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <BestSelling />
       <PromoBanner />
       <ExplorerProduct />
+      <NewArrival />
     </main>
   );
 }
