@@ -1,5 +1,11 @@
+"use client";
+
 import Image from "next/image";
 import { FaStar } from "react-icons/fa";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart } from "@/store/features/cartSlice";
+import { use } from "react";
+
 
 type Props = {
   product: {
@@ -13,6 +19,12 @@ type Props = {
 };
 
 export default function ProductCard({ product }: Props) {
+  const dispatch = useDispatch();
+
+  // Cek debug cart state
+  // const cart = useSelector((state: any) => state.cart.items);
+  // console.log("Cart State:", cart);
+
   const discount =
     product.oldPrice
       ? Math.round(
@@ -80,9 +92,12 @@ export default function ProductCard({ product }: Props) {
       </div>
 
       {/* Add to Cart */}
-      <button className="mt-3 w-full bg-black text-white py-2 text-sm rounded opacity-0 group-hover:opacity-100 transition">
+      <button
+        onClick={() => dispatch(addToCart(product))}
+        className="mt-3 w-full bg-black text-white py-2 text-sm rounded opacity-0 group-hover:opacity-100 transition">
         Add To Cart
       </button>
+      
     </div>
   );
 }
