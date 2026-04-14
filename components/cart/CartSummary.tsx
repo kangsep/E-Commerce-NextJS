@@ -1,6 +1,7 @@
 "use client";
 
 import { useSelector } from "react-redux";
+import  Link from "next/link";
 
 export default function CartSummary() {
   const cartItems = useSelector((state: any) => state.cart.items);
@@ -12,7 +13,7 @@ export default function CartSummary() {
   );
 
   return (
-    <div className="border p-6">
+    <div className="border p-6 rounded">
       <h3 className="font-bold mb-4">Cart Total</h3>
 
       <div className="flex justify-between mb-2">
@@ -30,9 +31,11 @@ export default function CartSummary() {
         <span>${subtotal}</span>
       </div>
 
-      <button className="bg-red-500 text-white w-full py-2">
-        Proceed to checkout
-      </button>
+      <Link href="/checkout">
+        <button className="bg-red-500 text-white w-full py-2 rounded">
+          Proceed to checkout
+        </button>
+      </Link>
     </div>
   );
 }

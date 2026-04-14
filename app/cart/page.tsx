@@ -1,10 +1,19 @@
 "use client";
-
+import { useEffect, useState } from "react";
 import CartList from "@/components/cart/CartList";
 import CartSummary from "@/components/cart/CartSummary";
 import CouponInput from "@/components/cart/CouponInput";
 
 export default function CartPage() {
+
+  const [mounted, setMounted] = useState(false);
+  
+  useEffect(() => {
+      setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
+  
   return (
     <div className="px-10 py-10">
       
@@ -28,7 +37,7 @@ export default function CartPage() {
       </div>
 
       {/* Bottom */}
-      <div className="grid md:grid-cols-2 gap-10 mt-10">
+      <div className="grid md:grid-cols-2 gap-10 mt-10 items-start">
         <CouponInput />
         <CartSummary />
       </div>

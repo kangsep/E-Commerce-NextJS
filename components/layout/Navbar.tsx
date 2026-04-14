@@ -1,5 +1,5 @@
 "use client";
-
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Search, Heart, ShoppingCart } from "lucide-react";
 import Link from "next/link";
@@ -9,6 +9,12 @@ export default function Navbar() {
   const cartItems = useSelector((state: any) => state.cart.items);
   const pathname = usePathname();
   const wishlistItems = useSelector((state: any) => state.wishlist.items);
+
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => { 
+    setMounted(true);
+  }, []);
 
   const menus = [
     { name: "Home", path: "/" },
@@ -70,7 +76,7 @@ export default function Navbar() {
         <Link href="/wishlist" className="relative cursor-pointer">
           <Heart />
 
-          {wishlistItems.length > 0 && (
+          {mounted && wishlistItems.length > 0 && (
             <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
               {wishlistItems.length}
             </span>
@@ -81,7 +87,7 @@ export default function Navbar() {
         <Link href="/cart" className="relative cursor-pointer hover:scale-110 transition">
           <ShoppingCart />
 
-          {totalQty > 0 && (
+          {mounted &&totalQty > 0 && (
             <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
               {totalQty}
             </span>

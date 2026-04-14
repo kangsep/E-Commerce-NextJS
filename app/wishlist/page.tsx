@@ -3,6 +3,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import { removeFromWishlist } from "@/store/features/wishlistSlice";
 import { addToCart } from "@/store/features/cartSlice";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 
 export default function WishlistPage() {
@@ -10,7 +11,14 @@ export default function WishlistPage() {
     (state: any) => state.wishlist.items
   );
 
-  const dispatch = useDispatch();
+  const [mounted, setMounted] = useState(false);
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
+    const dispatch = useDispatch();
+
+    if (!mounted) return null;
 
   return (
     <div className="px-10 py-10">
@@ -18,7 +26,7 @@ export default function WishlistPage() {
       {/* Title */}
       <div className="flex justify-between mb-6">
         <h2 className="text-xl font-semibold">
-          Wishlist ({wishlistItems.length})
+          Wishlist ({mounted ? wishlistItems.length : 0})
         </h2>
 
         <button className="border px-6 py-2">

@@ -8,7 +8,7 @@ export default function CartList() {
 
   return (
     <>
-      {/* HEADER */}
+      {/* Header */}
       <div className="grid grid-cols-4 bg-white p-4 border rounded mb-4 font-semibold">
         <p>Product</p>
         <p>Price</p>
@@ -16,7 +16,7 @@ export default function CartList() {
         <p>Subtotal</p>
       </div>
 
-      {/* ITEMS */}
+      {/* Items */}
       {cartItems.map((item: any) => (
         <CartItem key={item.id} item={item} />
       ))}

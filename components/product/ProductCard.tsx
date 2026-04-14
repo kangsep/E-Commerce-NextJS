@@ -5,6 +5,7 @@ import { FaStar } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "@/store/features/cartSlice";
 import { toggleWishlist } from "@/store/features/wishlistSlice";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 
 type Props = {
@@ -20,6 +21,12 @@ type Props = {
 
 export default function ProductCard({ product }: Props) {
   const dispatch = useDispatch();
+
+  const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+      setMounted(true);
+    }, []);
 
   const wishlistItems = useSelector((state: any) => state.wishlist.items);
 
@@ -55,7 +62,7 @@ export default function ProductCard({ product }: Props) {
             }}
             className="absolute top-2 right-2 z-10 bg-white p-2 rounded-full shadow"
           >
-            <span className={isWishlisted ? "text-red-500" : ""}>
+            <span className={ mounted && isWishlisted ? "text-red-500" : ""}>
               ❤️
             </span>
           </button>
