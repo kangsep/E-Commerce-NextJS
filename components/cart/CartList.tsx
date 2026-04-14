@@ -9,7 +9,7 @@ export default function CartList() {
   return (
     <>
       {/* Header */}
-      <div className="grid grid-cols-4 bg-white p-4 border rounded mb-4 font-semibold">
+      <div className="grid grid-cols-4 bg-white p-4 mb-4 font-semibold">
         <p>Product</p>
         <p>Price</p>
         <p>Quantity</p>

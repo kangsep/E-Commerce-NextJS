@@ -7,6 +7,7 @@ import ProductInfo from "@/components/product-detail/ProductInfo";
 
 export default function ProductDetailPage() {
   const params = useParams();
+  
   const id = Number(params.id);
 
   const product = products.find((p) => p.id === id);

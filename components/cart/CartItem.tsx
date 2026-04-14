@@ -12,9 +12,9 @@ export default function CartItem({ item }: any) {
   const dispatch = useDispatch();
 
   return (
-    <div className="grid grid-cols-4 items-center bg-white p-4 border rounded mb-4">
+    <div className="grid grid-cols-4 items-center bg-white p-4  mb-4">
       
-      {/* PRODUCT */}
+      {/* Product */}
       <div className="flex items-center gap-4">
         <button
           onClick={() => dispatch(removeFromCart(item.id))}
@@ -35,10 +35,10 @@ export default function CartItem({ item }: any) {
         <p>{item.name}</p>
       </div>
 
-      {/* PRICE */}
+      {/* Price */}
       <p>${item.price}</p>
 
-      {/* QUANTITY */}
+      {/* Quantity */}
       <div className="flex items-center gap-2">
         <button
           onClick={() => dispatch(decreaseQty(item.id))}
@@ -57,7 +57,7 @@ export default function CartItem({ item }: any) {
         </button>
       </div>
 
-      {/* SUBTOTAL */}
+      {/* Subtotal */}
       <p>${item.price * item.quantity}</p>
     </div>
   );

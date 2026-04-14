@@ -39,7 +39,7 @@ export default function WishlistPage() {
         {wishlistItems.map((item: any) => (
           <div
             key={item.id}
-            className="bg-white p-4 rounded border"
+            className="bg-white p-4 "
           >
             {/* Image */}
             <div className="relative h-40">
@@ -70,7 +70,7 @@ export default function WishlistPage() {
             {/* Add to Cart */}
             <button
               onClick={() => dispatch(addToCart(item))}
-              className="mt-3 w-full bg-black text-white py-2 text-sm"
+              className="mt-3 w-full bg-black text-white py-2 text-sm rounded"
             >
               Add To Cart
             </button>
