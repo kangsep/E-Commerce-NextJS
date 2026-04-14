@@ -8,6 +8,7 @@ import { usePathname } from "next/navigation";
 export default function Navbar() {
   const cartItems = useSelector((state: any) => state.cart.items);
   const pathname = usePathname();
+  const wishlistItems = useSelector((state: any) => state.wishlist.items);
 
   const menus = [
     { name: "Home", path: "/" },
@@ -66,7 +67,15 @@ export default function Navbar() {
         </div>
 
         {/* Wishlist */}
-        <Heart className="cursor-pointer hover:scale-110 transition" />
+        <Link href="/wishlist" className="relative cursor-pointer">
+          <Heart />
+
+          {wishlistItems.length > 0 && (
+            <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
+              {wishlistItems.length}
+            </span>
+          )}
+        </Link>
 
         {/* Cart */}
         <Link href="/cart" className="relative cursor-pointer hover:scale-110 transition">

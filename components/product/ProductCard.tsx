@@ -4,8 +4,8 @@ import Image from "next/image";
 import { FaStar } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "@/store/features/cartSlice";
-import { use } from "react";
-
+import { toggleWishlist } from "@/store/features/wishlistSlice";
+import Link from "next/link";
 
 type Props = {
   product: {
@@ -21,9 +21,11 @@ type Props = {
 export default function ProductCard({ product }: Props) {
   const dispatch = useDispatch();
 
-  // Cek debug cart state
-  // const cart = useSelector((state: any) => state.cart.items);
-  // console.log("Cart State:", cart);
+  const wishlistItems = useSelector((state: any) => state.wishlist.items);
+
+  const isWishlisted = wishlistItems.some(
+    (item: any) => item.id === product.id
+  );
 
   const discount =
     product.oldPrice
@@ -35,61 +37,72 @@ export default function ProductCard({ product }: Props) {
   return (
     <div className="bg-white rounded-lg p-4 hover:shadow-md transition group">
       
-      {/* Image */}
-      <div className="relative w-full h-48 bg-gray-100 rounded flex items-center justify-center overflow-hidden">
-        
-        {discount && (
-          <span className="absolute top-2 left-2 z-10 bg-red-500 text-white text-xs px-2 py-1 rounded">
-            -{discount}%
-          </span>
-        )}
-
-        <button className="absolute top-2 right-2 z-10 bg-white p-2 rounded-full shadow opacity-0 group-hover:opacity-100 transition">
-          ❤️
-        </button>
-
-        <Image
-          src={product.image}
-          alt={product.name}
-          fill
-          className="object-contain p-3 transition duration-300 group-hover:scale-105"
-        />
-      </div>
-
-      {/* Info */}
-      <div className="mt-3">
-        <h3 className="font-semibold text-sm line-clamp-2">
-          {product.name}
-        </h3>
-
-        {/* Rating */}
-        <div className="flex items-center gap-1 mt-1">
-          {[...Array(5)].map((_, i) => (
-            <FaStar
-              key={i}
-              size={12}
-              className={
-                i < (product.rating || 0)
-                  ? "text-yellow-400"
-                  : "text-gray-300"
-              }
-            />
-          ))}
-        </div>
-
-        {/* Price */}
-        <div className="flex gap-2 mt-1 items-center">
-          <span className="text-red-500 font-semibold">
-            ${product.price}
-          </span>
-
-          {product.oldPrice && (
-            <span className="line-through text-gray-400 text-sm">
-              ${product.oldPrice}
+      {/* Link Area */}
+      <Link href={`/product/${product.id}`}>
+        <div className="relative w-full h-48 bg-gray-100 rounded flex items-center justify-center overflow-hidden cursor-pointer">
+          
+          {discount && (
+            <span className="absolute top-2 left-2 z-10 bg-red-500 text-white text-xs px-2 py-1 rounded">
+              -{discount}%
             </span>
           )}
+
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              dispatch(toggleWishlist(product));
+            }}
+            className="absolute top-2 right-2 z-10 bg-white p-2 rounded-full shadow"
+          >
+            <span className={isWishlisted ? "text-red-500" : ""}>
+              ❤️
+            </span>
+          </button>
+
+          <Image
+            src={product.image}
+            alt={product.name}
+            fill
+            className="object-contain p-3 transition duration-300 group-hover:scale-105"
+          />
         </div>
-      </div>
+
+        {/* Info */}
+        <div className="mt-3">
+          <h3 className="font-semibold text-sm line-clamp-2">
+            {product.name}
+          </h3>
+
+          {/* Rating */}
+          <div className="flex items-center gap-1 mt-1">
+            {[...Array(5)].map((_, i) => (
+              <FaStar
+                key={i}
+                size={12}
+                className={
+                  i < (product.rating || 0)
+                    ? "text-yellow-400"
+                    : "text-gray-300"
+                }
+              />
+            ))}
+          </div>
+
+          {/* Price */}
+          <div className="flex gap-2 mt-1 items-center">
+            <span className="text-red-500 font-semibold">
+              ${product.price}
+            </span>
+
+            {product.oldPrice && (
+              <span className="line-through text-gray-400 text-sm">
+                ${product.oldPrice}
+              </span>
+            )}
+          </div>
+        </div>
+      </Link>
 
       {/* Add to Cart */}
       <button
@@ -97,7 +110,7 @@ export default function ProductCard({ product }: Props) {
         className="mt-3 w-full bg-black text-white py-2 text-sm rounded opacity-0 group-hover:opacity-100 transition">
         Add To Cart
       </button>
-      
+
     </div>
   );
 }

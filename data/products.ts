@@ -150,3 +150,9 @@ export const allProducts = [
     rating: 5,
   },
 ];
+
+export const products = [
+  ...flashSaleProducts,
+  ...bestSellingProducts,
+  ...allProducts,
+];
