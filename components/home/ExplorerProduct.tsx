@@ -5,7 +5,7 @@ import SectionTitle from "@/components/ui/SectionTitle";
 export default function ExplorerProducts() {
   return (
     <section className="py-12">
-
+        
       {/* Header */}
       <SectionTitle
         subtitle="Our Products"

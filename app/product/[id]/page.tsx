@@ -4,6 +4,7 @@ import { useParams } from "next/navigation";
 import { products } from "@/data/products";
 import ProductGallery from "@/components/product-detail/ProductGallery";
 import ProductInfo from "@/components/product-detail/ProductInfo";
+import RelatedProduct from "@/components/product-detail/RelatedProduct";
 
 export default function ProductDetailPage() {
   const params = useParams();
@@ -26,6 +27,9 @@ export default function ProductDetailPage() {
       <div className="grid md:grid-cols-2 gap-10">
         <ProductGallery product={product} />
         <ProductInfo product={product} />
+      </div>
+      <div>
+        <RelatedProduct/>
       </div>
 
     </div>

@@ -20,7 +20,7 @@ const features = [
 
 export default function FeaturesSection() {
   return (
-    <div className="grid md:grid-cols-3 gap-10 text-center my-12">
+    <div className="grid md:grid-cols-3 gap-4 text-center my-12">
       
       {features.map((item, i) => {
         const Icon = item.icon;

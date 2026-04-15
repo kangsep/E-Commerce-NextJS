@@ -21,7 +21,7 @@ const team = [
 
 export default function TeamSection() {
   return (
-    <div className="space-y-15">
+    <div className="space-y-15 mb-24">
       
       <div className="grid md:grid-cols-3 gap-8">
         {team.map((person, i) => (

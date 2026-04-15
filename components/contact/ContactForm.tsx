@@ -28,7 +28,7 @@ export default function ContactForm() {
       {/* Message */}
       <textarea
         placeholder="Your Message"
-        rows={6}
+        rows={6}    
         className="w-full bg-gray-200 px-4 py-3 outline-none"
       />
 
