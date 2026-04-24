@@ -21,7 +21,7 @@ export default function Footer() {
   return (
     <footer className="bg-black text-white px-10 pt-16 pb-6">
       
-      <div className="grid grid-cols-1 md:grid-cols-5 gap-10">
+      <div className="grid grid-cols-1 md:grid-cols-5 gap-10 max-w-7xl mx-auto">
 
         {/* Column 1 */}
         <div>

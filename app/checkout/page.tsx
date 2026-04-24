@@ -17,7 +17,7 @@ export default function CheckoutPage() {
     if (!mounted) return null;
 
   return (
-    <div className="px-10 py-10">
+    <div className="px-10 py-10 max-w-7xl mx-auto">
       
       {/* Breadcrumb */}
       <p className="text-sm text-gray-500 mb-6">

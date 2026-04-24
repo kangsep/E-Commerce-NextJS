@@ -3,7 +3,7 @@ import ProfileForm from "@/components/account/ProfileForm";
 
 export default function AccountPage() {
   return (
-    <div className="px-10 py-10 space-y-6">
+    <div className="px-10 py-10 space-y-6 max-w-7xl mx-auto">
       
       {/* Breadcrumb */}
       <div className="flex justify-between items-center">

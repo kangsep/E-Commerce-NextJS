@@ -30,7 +30,7 @@ export default function Navbar() {
   );
 
   return (
-    <div className="flex items-center justify-between px-10 py-4 border-b">
+    <div className=" bg-white flex text-black items-center justify-between px-10 py-4 border-b max-w-7xl mx-auto">
       
       {/* Logo */}
       <Link href="/" className="text-xl font-bold">

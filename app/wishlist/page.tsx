@@ -5,6 +5,7 @@ import { removeFromWishlist } from "@/store/features/wishlistSlice";
 import { addToCart } from "@/store/features/cartSlice";
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import FlashSale from "@/components/home/FlashSale";
 
 export default function WishlistPage() {
   const wishlistItems = useSelector(

@@ -94,7 +94,7 @@ export default function Carousel() {
           </div>
 
           {/* Image */}
-          <div className="relative w-60 h-40">
+          <div className="relative w-100 h-60">
             <Image
               src={slides[index].image}
               alt="banner"

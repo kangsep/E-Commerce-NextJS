@@ -15,7 +15,7 @@ export default function LoginPage() {
         />
       </div>
 
-      {/* RIGHT FORM */}
+      {/* kedowefjfbjbo  */}
       <div className="flex items-center justify-center px-10">
         <LoginForm />
       </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { FcGoogle } from "react-icons/fc";
 
 export default function SignupForm() {
   return (
@@ -46,7 +47,7 @@ export default function SignupForm() {
 
       {/* Google */}
       <button className="w-full border py-3 rounded flex items-center justify-center gap-2 hover:bg-gray-50">
-        <span>🔍</span>
+        <FcGoogle/>
         Sign up with Google
       </button>
 

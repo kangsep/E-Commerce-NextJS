@@ -25,7 +25,7 @@ export default function NewArrival() {
 
           <div className="relative z-10">
             <h3 className="text-xl font-bold mb-2">
-              PlayStation 5
+              PlayStation 5   
             </h3>
             <p className="text-sm mb-3">
               Black and White version of the PS5 coming out on sale.

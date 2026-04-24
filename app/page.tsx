@@ -9,7 +9,7 @@ import FeaturesSection from "@/components/about/FeaturesSection";
 
 export default function Home() {
   return (
-    <main className="px-10">
+    <main className="p-6 max-w-7xl mx-auto">
       <HeroSection />
       <FlashSale />
       <Category />
